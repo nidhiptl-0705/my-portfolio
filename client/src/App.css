@@ -1,0 +1,422 @@
+/* Custom Portfolio Styles */
+
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --success-color: #198754;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Custom Gradients */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.bg-gradient-success {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  z-index: -1;
+}
+
+.hero-placeholder {
+  width: 300px;
+  height: 300px;
+  border: 3px solid var(--warning-color);
+}
+
+/* Profile Photo Styles */
+.hero-photo-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-photo {
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.hero-photo img {
+  object-fit: cover;
+  object-position: center top;
+  transition: all 0.3s ease;
+}
+
+.hero-photo:hover img {
+  transform: scale(1.05);
+}
+
+/* Floating Elements */
+.floating-element {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Professional Badge */
+.professional-badge {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Skills Section */
+.skill-icon {
+  transition: transform 0.3s ease;
+}
+
+.skill-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Project Cards */
+.project-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.project-icon {
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-icon {
+  transform: scale(1.1);
+}
+
+/* Contact Form */
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Navigation */
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--warning-color) !important;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Cards */
+.card {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Progress Bars */
+.progress {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  transition: width 1s ease-in-out;
+}
+
+/* Badges */
+.badge {
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  width: 100% !important;
+  max-width: 100vw !important;
+  position: relative !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  overflow: hidden;
+  min-width: 100vw !important;
+}
+
+footer .container-fluid {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  margin: 0 !important;
+}
+
+footer .row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+}
+
+footer .col-md-6,
+footer .col-lg-4 {
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+}
+
+footer a {
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--warning-color) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-placeholder {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .display-3 {
+    font-size: 2.5rem;
+  }
+  
+  .display-4 {
+    font-size: 2rem;
+  }
+
+  .hero-photo {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  
+  .floating-element {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-placeholder {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .display-3 {
+    font-size: 2rem;
+  }
+  
+  .display-4 {
+    font-size: 1.75rem;
+  }
+
+  .hero-photo {
+    width: 250px !important;
+    height: 250px !important;
+  }
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.8s ease-in;
+}
+
+.slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
+}
+
+/* Loading States */
+.spinner-border {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Utility Classes */
+.text-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shadow-custom {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.border-radius-custom {
+  border-radius: 16px;
+}
+
+/* Comprehensive Footer Full Screen Coverage */
+footer {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  min-width: 100vw !important;
+  position: relative !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+footer .container-fluid {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  margin: 0 !important;
+}
+
+footer .row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+}
+
+footer .col-md-6,
+footer .col-lg-4 {
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+}
+
+/* Override Bootstrap container constraints */
+footer .container-fluid {
+  max-width: none !important;
+}
+
+/* Ensure all footer elements respect full width */
+footer * {
+  box-sizing: border-box !important;
+}
+
+/* Media query overrides for all screen sizes */
+@media (min-width: 576px) {
+  footer .container-fluid {
+    max-width: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  footer .container-fluid {
+    max-width: none !important;
+  }
+}
+
+@media (min-width: 992px) {
+  footer .container-fluid {
+    max-width: none !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  footer .container-fluid {
+    max-width: none !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  footer .container-fluid {
+    max-width: none !important;
+  }
+}
