@@ -76,7 +76,7 @@ const Contact = () => {
             >
               <h1 className="display-4 fw-bold mb-3">Get In Touch</h1>
               <p className="lead text-muted">
-                I'd love to hear from you! Feel free to reach out for collaborations, 
+                I'd love to hear from you! Feel free to reach out for collaborations,
                 opportunities, or just to say hello.
               </p>
             </motion.div>
@@ -87,7 +87,7 @@ const Contact = () => {
                 <div className="card border-0 shadow-sm">
                   <div className="card-body p-4">
                     <h3 className="card-title fw-bold mb-4">
-                      <i className="fas fa-envelope me-2 text-primary"></i>
+                      <i className="fas fa-envelope me-2" style={{ color: '#FF69B4' }}></i>
                       Send Message
                     </h3>
 
@@ -133,6 +133,7 @@ const Contact = () => {
                         <input
                           type="text"
                           className="form-control form-control-lg"
+                          style={{ borderColor: '#EEC0C8' }}
                           id="name"
                           name="name"
                           value={formData.name}
@@ -149,6 +150,7 @@ const Contact = () => {
                         <input
                           type="email"
                           className="form-control form-control-lg"
+                          style={{ borderColor: '#EEC0C8' }}
                           id="email"
                           name="email"
                           value={formData.email}
@@ -164,6 +166,7 @@ const Contact = () => {
                         </label>
                         <textarea
                           className="form-control form-control-lg"
+                          style={{ borderColor: '#EEC0C8' }}
                           id="message"
                           name="message"
                           rows="5"
@@ -176,7 +179,8 @@ const Contact = () => {
 
                       <motion.button
                         type="submit"
-                        className="btn btn-primary btn-lg w-100"
+                        className="btn btn-lg w-100"
+                        style={{ backgroundColor: '#FF69B4', color: '#C21E56' }}
                         disabled={isSubmitting}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
@@ -203,32 +207,32 @@ const Contact = () => {
                 <div className="card border-0 shadow-sm h-100">
                   <div className="card-body p-4">
                     <h3 className="card-title fw-bold mb-4">
-                      <i className="fas fa-info-circle me-2 text-primary"></i>
+                      <i className="fas fa-info-circle me-2" style={{ color: '#FF69B4' }}></i>
                       Contact Info
                     </h3>
 
                     <div className="mb-4">
                       <h6 className="fw-bold mb-2">
-                        <i className="fas fa-envelope me-2 text-muted"></i>
+                        <i className="fas fa-envelope me-2" style={{ color: '#FF69B4' }}></i>
                         Email
                       </h6>
-                      <p className="text-muted mb-0">patelnidhip007@gmail.com</p>
+                      <p className="text-muted mb-0 small" style={{ wordBreak: 'break-all' }}>patelnidhip007@gmail.com</p>
                     </div>
 
                     <div className="mb-4">
                       <h6 className="fw-bold mb-2">
-                        <i className="fas fa-map-marker-alt me-2 text-muted"></i>
+                        <i className="fas fa-map-marker-alt me-2" style={{ color: '#FF69B4' }}></i>
                         Location
                       </h6>
-                      <p className="text-muted mb-0">Vadodara, Gujarat, India</p>
+                      <p className="text-muted mb-0 small">Vadodara, Gujarat, India</p>
                     </div>
 
                     <div className="mb-4">
                       <h6 className="fw-bold mb-2">
-                        <i className="fas fa-clock me-2 text-muted"></i>
+                        <i className="fas fa-clock me-2" style={{ color: '#FF69B4' }}></i>
                         Response Time
                       </h6>
-                      <p className="text-center text-white mb-0">Within 24 hours</p>
+                      <p className="text-center mb-0 badge" style={{ backgroundColor: '#FF69B4', color: '#C21E56' }}>Within 24 hours</p>
                     </div>
 
                     <hr />

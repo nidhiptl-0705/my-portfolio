@@ -1,13 +1,14 @@
 /* Custom Portfolio Styles */
 
 :root {
-  --primary-color: #0d6efd;
-  --secondary-color: #6c757d;
+  --primary-color: #FF69B4; /* Hot Pink */
+  --secondary-color: #EEC0C8; /* Palermo Pink */
   --success-color: #198754;
   --warning-color: #ffc107;
   --danger-color: #dc3545;
-  --light-color: #f8f9fa;
+  --light-color: #fff0f3; /* Light Pinkish White */
   --dark-color: #212529;
+  --rose-red: #C21E56;
 }
 
 /* Global Styles */
@@ -33,11 +34,11 @@ body {
 
 /* Custom Gradients */
 .bg-gradient-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #FF69B4 0%, #EEC0C8 100%);
 }
 
 .bg-gradient-secondary {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, #EEC0C8 0%, #FF69B4 100%);
 }
 
 .bg-gradient-success {
@@ -57,7 +58,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #FF69B4 0%, #EEC0C8 100%);
   z-index: -1;
 }
 
@@ -77,12 +78,12 @@ body {
   position: relative;
   z-index: 2;
   transition: all 0.3s ease;
-}
-
-.hero-photo img {
-  object-fit: cover;
-  object-position: center top;
-  transition: all 0.3s ease;
+  width: 380px;
+  height: 380px;
+  border: 6px solid var(--primary-color);
+  background-color: var(--primary-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
 }
 
 .hero-photo:hover img {
@@ -233,23 +234,42 @@ footer a:hover {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .hero-placeholder {
-    width: 200px;
-    height: 200px;
+@media (max-width: 1200px) {
+  .hero-photo {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-section {
+    padding-top: 100px;
+    text-align: center;
   }
   
-  .display-3 {
-    font-size: 2.5rem;
-  }
-  
-  .display-4 {
-    font-size: 2rem;
+  .hero-section .row {
+    flex-direction: column-reverse;
   }
 
   .hero-photo {
-    width: 300px !important;
-    height: 300px !important;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .display-3 {
+    font-size: 2.8rem;
+  }
+  
+  .display-4 {
+    font-size: 2.2rem;
+  }
+
+  .hero-photo {
+    width: 280px;
+    height: 280px;
   }
   
   .floating-element {
@@ -258,22 +278,22 @@ footer a:hover {
 }
 
 @media (max-width: 576px) {
-  .hero-placeholder {
-    width: 150px;
-    height: 150px;
-  }
-  
   .display-3 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   
   .display-4 {
-    font-size: 1.75rem;
+    font-size: 1.8rem;
   }
 
   .hero-photo {
-    width: 250px !important;
-    height: 250px !important;
+    width: 220px;
+    height: 220px;
+  }
+  
+  .btn-lg {
+    width: 100%;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -332,7 +352,7 @@ footer a:hover {
 
 /* Utility Classes */
 .text-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #FF69B4 0%, #EEC0C8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

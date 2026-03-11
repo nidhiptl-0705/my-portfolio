@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   const handleCVDownload = () => {
-    window.open('/api/cv', '_blank');
+    window.open('/Nidhi-Patel-CV.html', '_blank');
   };
 
   const containerVariants = {
@@ -31,7 +31,7 @@ const Home = () => {
   return (
     <div className="home-page">
       {/* Hero Section */}
-      <section className="hero-section d-flex align-items-center min-vh-100 bg-gradient-primary text-white">
+      <section className="hero-section d-flex align-items-center min-vh-100 bg-gradient-primary" style={{ color: '#C21E56' }}>
         <div className="container">
           <motion.div
             className="row align-items-center"
@@ -40,23 +40,24 @@ const Home = () => {
             animate="visible"
           >
             <motion.div className="col-lg-6" variants={itemVariants}>
-              <motion.h1 
+              <motion.h1
                 className="display-3 fw-bold mb-4"
                 whileHover={{ scale: 1.02 }}
               >
-                Hi, I'm <span className="text-warning"> Patel Nidhi</span>
+                Hi, I'm <span style={{ color: '#EEC0C8' }}> Patel Nidhi</span>
               </motion.h1>
-              <motion.h2 className="h3 mb-4 text-light" variants={itemVariants}>
+              <motion.h2 className="h3 mb-4" style={{ color: '#C21E56' }} variants={itemVariants}>
                 Information Technology Student
               </motion.h2>
               <motion.p className="lead mb-4" variants={itemVariants}>
-                Passionate about technology and innovation. I love creating solutions 
+                Passionate about technology and innovation. I love creating solutions
                 that make a difference in people's lives through code and creativity.
               </motion.p>
-              
+
               <motion.div className="d-flex flex-wrap gap-3" variants={itemVariants}>
                 <motion.button
-                  className="btn btn-warning btn-lg px-4 py-2 fw-bold"
+                  className="btn btn-light btn-lg px-4 py-2 fw-bold"
+                  style={{ color: '#FF69B4', border: 'none' }}
                   onClick={handleCVDownload}
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
@@ -67,13 +68,13 @@ const Home = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Link to="/projects" className="btn btn-outline-light btn-lg px-4 py-2">
+                  <Link to="/projects" className="btn btn-outline-light btn-lg px-4 py-2" style={{ borderColor: '#C21E56', color: '#C21E56' }}>
                     View My Work
                   </Link>
                 </motion.div>
               </motion.div>
             </motion.div>
-            
+
             <motion.div className="col-lg-6 text-center" variants={itemVariants}>
               <motion.div
                 className="hero-image-container position-relative"
@@ -83,13 +84,6 @@ const Home = () => {
                 <div className="hero-photo-wrapper position-relative">
                   <motion.div
                     className="hero-photo rounded-circle overflow-hidden mx-auto shadow-lg"
-                    style={{
-                      width: '380px',
-                      height: '380px',
-                      border: '6px solid #ffc107',
-                      backgroundColor: '#ffc107',
-                      boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)'
-                    }}
                     initial={{ scale: 0.9, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.3 }}
@@ -145,9 +139,10 @@ const Home = () => {
                       <span className="display-6">{skill.icon}</span>
                     </div>
                     <h5 className="card-title fw-bold">{skill.name}</h5>
-                    <div className="progress mt-3" style={{ height: '8px' }}>
+                    <div class="progress mt-3" style={{ height: '8px', backgroundColor: '#fff0f3' }}>
                       <motion.div
-                        className="progress-bar bg-warning"
+                        className="progress-bar"
+                        style={{ backgroundColor: '#FF69B4' }}
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         transition={{ duration: 1, delay: 0.5 }}

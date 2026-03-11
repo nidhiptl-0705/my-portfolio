@@ -19,7 +19,7 @@ const Navbar = () => {
     <motion.nav 
       className="navbar navbar-expand-lg fixed-top"
       style={{
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        background: 'linear-gradient(135deg, #FF69B4 0%, #EEC0C8 100%)',
         backdropFilter: 'blur(10px)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)'
@@ -35,17 +35,23 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <Link className="navbar-brand d-flex align-items-center text-white fw-bold" to="/">
+          <Link className="navbar-brand d-flex align-items-center fw-bold" to="/" style={{ color: '#C21E56' }}>
             <img
               src="/np.png"
               alt="Nidhi Patel Logo"
               onError={(e) => { e.currentTarget.style.display = 'none'; }}
               className="me-2"
-              style={{ width: '45px', height: '45px', objectFit: 'contain' }}
+              style={{ 
+                width: '45px', 
+                height: '45px', 
+                objectFit: 'contain',
+                mixBlendMode: 'multiply',
+                filter: 'brightness(1.1) contrast(1.1)' 
+              }}
             />
             <div>
               <span className="fs-4 d-block">NIDHI PATEL</span>
-              <span className="fs-6 fw-normal text-white-50 d-block">IT Portfolio</span>
+              <span className="fs-6 fw-normal d-block" style={{ color: 'rgba(194, 30, 86, 0.7)' }}>IT Portfolio</span>
             </div>
           </Link>
         </motion.div>
@@ -85,7 +91,7 @@ const Navbar = () => {
                   to={item.path}
                   onClick={() => setIsOpen(false)}
                   style={{
-                    color: isActive(item.path) ? '#ffffff' : 'rgba(255, 255, 255, 0.8)',
+                    color: isActive(item.path) ? '#C21E56' : 'rgba(194, 30, 86, 0.8)',
                     padding: '0.75rem 1rem',
                     borderRadius: '8px',
                     transition: 'all 0.3s ease',
@@ -94,13 +100,13 @@ const Navbar = () => {
                   onMouseEnter={(e) => {
                     if (!isActive(item.path)) {
                       e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-                      e.target.style.color = '#ffffff';
+                      e.target.style.color = '#C21E56';
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (!isActive(item.path)) {
                       e.target.style.backgroundColor = 'transparent';
-                      e.target.style.color = 'rgba(255, 255, 255, 0.8)';
+                      e.target.style.color = 'rgba(194, 30, 86, 0.8)';
                     }
                   }}
                 >
@@ -118,7 +124,7 @@ const Navbar = () => {
                         transform: 'translateX(-50%)',
                         width: '20px',
                         height: '3px',
-                        background: '#ffffff',
+                        background: '#C21E56',
                         borderRadius: '2px'
                       }}
                     />
@@ -135,16 +141,17 @@ const Navbar = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               <motion.a
-                href="/api/cv"
-                className="btn btn-warning btn-sm fw-bold px-3 py-2"
+                href="/Nidhi-Patel-CV.html"
+                className="btn btn-light btn-sm fw-bold px-3 py-2"
                 style={{
                   borderRadius: '25px',
-                  boxShadow: '0 4px 15px rgba(255, 193, 7, 0.3)',
-                  border: 'none'
+                  boxShadow: '0 4px 15px rgba(255, 105, 180, 0.3)',
+                  border: 'none',
+                  color: '#FF69B4'
                 }}
                 whileHover={{ 
                   scale: 1.05,
-                  boxShadow: '0 6px 20px rgba(255, 193, 7, 0.4)'
+                  boxShadow: '0 6px 20px rgba(255, 105, 180, 0.4)'
                 }}
                 whileTap={{ scale: 0.95 }}
                 download

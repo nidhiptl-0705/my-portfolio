@@ -6,61 +6,60 @@ const Projects = () => {
     {
       id: 1,
       title: "Attandance Management System",
-      description: "A full-stack e-commerce application built with React, Node.js, and MongoDB. Features include user authentication, product management, and payment integration.",
+      description: "A full-stack e-commerce application built with React, Node.js, and MongoDB. Features include user authentication,sallary count,admin & employee dashboard ,Attendance,.",
       technologies: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
-      image: "🛒",
-      github: "https://github.com/NidhiPatel123/Attandance-Management-System",
-      live: "https://github.com/NidhiPatel123/Attandance-Management-System",    
+      image: "attendance.png",
+      github: "https://github.com/nidhiptl-0705/vercel-frontend",
+      live: "https://vercel-frontend-tau-ten.vercel.app/login",
       category: "Full-Stack"
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "A responsive task management application with drag-and-drop functionality, user authentication, and real-time updates.",
-      technologies: ["React", "Firebase", "CSS3", "JavaScript"],
-      image: "📋",
-      github: "#",
-      live: "#",
-      category: "Frontend"
+      title: "Movie-book system",
+      description: "A movie ticket booking application with seat selection functionality, user login, and real-time updates,event,upcoming shows.",
+      technologies: ["React", "node.js", "tailwind css", "express", "mongodb"],
+      image: "movie-book.png",
+      github: "https://github.com/nidhiptl-0705/onlinepass",
+      live: "",
+      category: "Full-Stack"
     },
     {
       id: 3,
-      title: "Weather Dashboard",
+      title: "Calculator",
       description: "A weather application that displays current weather conditions and forecasts using external APIs and interactive charts.",
-      technologies: ["HTML5", "CSS3", "JavaScript", "Chart.js", "Weather API"],
-      image: "🌤️",
-      github: "https://github.com/NidhiPatel123/Weather-Dashboard",
-      live: "https://github.com/NidhiPatel123/Weather-Dashboard",
-      category: "Frontend-API"
+      technologies: ["tailwind css", "JavaScript", "node.js", "react+vite"],
+      image: "calculator.png",
+      github: "https://github.com/nidhiptl-0705/calculator",
+      live: "https://github.com/nidhiptl-0705/calculator",
+      category: "Frontend"
     },
-
     {
       id: 5,
       title: "Portfolio Website",
       description: "A modern, responsive portfolio website built with React and Bootstrap 5, featuring smooth animations and modern design.",
-      technologies: ["React", "Bootstrap 5", "Framer Motion", "CSS3"],
-      image: "🎨",
-      github: "https://github.com/NidhiPatel123/Portfolio-Website",
-      live: "https://github.com/NidhiPatel123/Portfolio-Website",
-      category: "Frontend"
+      technologies: ["React", "vite", "Framer Motion", "tailwind css"],
+      image: "portfolio.png",
+      github: "https://github.com/nidhiptl-0705/my-portfolio",
+      live: "https://github.com/nidhiptl-0705/my-portfolio",
+      category: "Frontend & Backend"
     },
     {
       id: 6,
-      title: "Smart Medicine Reminder System",
-      description: "RESTful API development with authentication, data validation, and comprehensive documentation using Swagger.",
-      technologies: ["Node.js", "Express", "MongoDB", "JWT", "Swagger"],
-      image: "🔌",
-      github: "https://github.com/NidhiPatel123/Smart-Medicine-Reminder-System",
-      live: "https://github.com/NidhiPatel123/Smart-Medicine-Reminder-System",
-      category: "Backend"
+      title: "POT's website",
+      description: "POT's website is a website for a therapist who provides therapy services to patients.",
+      technologies: ["Node.js", "Express", "MongoDB", "react+vite", "tailwind.css"],
+      image: "pot.png",
+      github: "https://github.com/nidhiptl-0705/POT",
+      live: "https://ot-frontend-nine.vercel.app/",
+      category: "Full-Stack"
     }
   ];
 
   const categories = ["All", "Frontend", "Backend", "Full-Stack"];
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const filteredProjects = selectedCategory === "All" 
-    ? projects 
+  const filteredProjects = selectedCategory === "All"
+    ? projects
     : projects.filter(project => project.category === selectedCategory);
 
   const containerVariants = {
@@ -111,7 +110,13 @@ const Projects = () => {
               <motion.button
                 key={category}
                 type="button"
-                className={`btn ${selectedCategory === category ? 'btn-primary' : 'btn-outline-primary'}`}
+                className="btn"
+                style={{
+                  backgroundColor: selectedCategory === category ? '#FF69B4' : 'transparent',
+                  color: selectedCategory === category ? '#ffffff' : '#FF69B4',
+                  border: '1px solid #FF69B4',
+                  margin: '0 5px'
+                }}
                 onClick={() => setSelectedCategory(category)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -140,7 +145,7 @@ const Projects = () => {
             >
               <motion.div
                 className="card h-100 border-0 shadow-sm project-card"
-                whileHover={{ 
+                whileHover={{
                   y: -10,
                   transition: { duration: 0.3 }
                 }}
@@ -148,17 +153,26 @@ const Projects = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="card-body p-4">
-                  <div className="text-center mb-3">
-                    <div className="project-icon display-4 mb-3">
-                      {project.image}
-                    </div>
-                    <span className="badge bg-primary mb-2">{project.category}</span>
+                <div className="card-header position-relative p-0 overflow-hidden" style={{ height: '200px', backgroundColor: '#fff0f3' }}>
+                  <div className="project-icon d-flex align-items-center justify-content-center h-100">
+                    {project.image.endsWith('.png') ? (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="img-fluid w-100 h-100 object-fit-cover"
+                        style={{ transition: 'transform 0.5s ease' }}
+                      />
+                    ) : (
+                      <span className="display-4">{project.image}</span>
+                    )}
                   </div>
-                  
+                  <span className="badge position-absolute top-0 end-0 m-3" style={{ backgroundColor: '#FF69B4' }}>{project.category}</span>
+                </div>
+                <div className="card-body p-4">
+
                   <h5 className="card-title fw-bold mb-3">{project.title}</h5>
                   <p className="card-text text-muted mb-4">{project.description}</p>
-                  
+
                   <div className="mb-4">
                     <h6 className="fw-bold mb-2">Technologies Used:</h6>
                     <div className="d-flex flex-wrap gap-1">
@@ -176,7 +190,7 @@ const Projects = () => {
                       ))}
                     </div>
                   </div>
-                  
+
                   <div className="d-flex gap-2">
                     <motion.a
                       href={project.github}
@@ -189,7 +203,8 @@ const Projects = () => {
                     </motion.a>
                     <motion.a
                       href={project.live}
-                      className="btn btn-primary btn-sm flex-fill"
+                      className="btn btn-sm flex-fill"
+                      style={{ backgroundColor: '#FF69B4', color: '#C21E56' }}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -218,7 +233,8 @@ const Projects = () => {
               </p>
               <motion.a
                 href="/contact"
-                className="btn btn-primary btn-lg px-4"
+                className="btn btn-lg px-4"
+                style={{ backgroundColor: '#FF69B4', color: '#C21E56' }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

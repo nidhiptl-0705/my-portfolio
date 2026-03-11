@@ -71,7 +71,7 @@ const About = () => {
           <motion.div className="col-lg-6" variants={itemVariants}>
             <div className="card border-0 shadow-sm h-100">
               <div className="card-body p-4">
-                <h3 className="card-title fw-bold mb-4 text-primary">
+                <h3 className="card-title fw-bold mb-4" style={{ color: '#FF69B4' }}>
                   <i className="fas fa-user me-2"></i>
                   Personal Information
                 </h3>
@@ -94,7 +94,7 @@ const About = () => {
                   </div>
                 </div>
                 <hr />
-                <p className="text-light">
+                <p style={{ color: '#C21E56' }}>
                   I am a passionate Information Technology student with a keen interest 
                   in modern web technologies and software development. I love learning 
                   new technologies and applying them to solve real-world problems.
@@ -107,7 +107,7 @@ const About = () => {
           <motion.div className="col-lg-6" variants={itemVariants}>
             <div className="card border-0 shadow-sm h-100">
               <div className="card-body p-4">
-                <h3 className="card-title fw-bold mb-4 text-success">
+                <h3 className="card-title fw-bold mb-4" style={{ color: '#FF69B4' }}>
                   <i className="fas fa-graduation-cap me-2"></i>
                   Education
                 </h3>
@@ -121,7 +121,7 @@ const About = () => {
                   >
                     <div className="d-flex justify-content-between align-items-start mb-2">
                       <h5 className="fw-bold mb-1">{edu.degree}</h5>
-                      <span className="badge bg-primary">{edu.year}</span>
+                      <span className="badge" style={{ backgroundColor: '#FF69B4' }}>{edu.year}</span>
                     </div>
                     <h6 className="text-muted mb-2">{edu.institution}</h6>
                     <p className="text-muted mb-0 small">{edu.description}</p>
@@ -135,7 +135,7 @@ const About = () => {
           <motion.div className="col-12" variants={itemVariants}>
             <div className="card border-0 shadow-sm">
               <div className="card-body p-4">
-                <h3 className="card-title fw-bold mb-4 text-warning">
+                <h3 className="card-title fw-bold mb-4" style={{ color: '#FF69B4' }}>
                   <i className="fas fa-lightbulb me-2"></i>
                   Areas of Interest
                 </h3>
@@ -152,7 +152,7 @@ const About = () => {
                           transition={{ duration: 0.5, delay: index * 0.1 }}
                         >
                           <div className="d-flex align-items-center">
-                            <i className="fas fa-check-circle text-success me-2"></i>
+                            <i className="fas fa-check-circle me-2" style={{ color: '#FF69B4' }}></i>
                             <span className="small">{skill}</span>
                           </div>
                         </motion.div>
